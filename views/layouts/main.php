@@ -9,6 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use yii\bootstrap5\Button;
 
 AppAsset::register($this);
 
@@ -36,6 +37,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
@@ -55,7 +57,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     . '</li>'
         ]
     ]);
+
+    echo Button::widget([
+        'options' => ['class' => 'navbar-user-btn'],
+        'encodeLabel' => false,
+        'label' => "Win Barua" . "<image src=" . Yii::getAlias('@web/images/user.png') . " alt='User icon'>",
+    ]);
+
     NavBar::end();
+
     ?>
 </header>
 

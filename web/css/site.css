@@ -2,6 +2,53 @@ main > .container {
     padding: 70px 15px 20px;
 }
 
+.navbar-brand {
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    margin-left: 40px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 30px;
+}
+
+.navbar-nav .nav-item a {
+    color: #525252;
+}
+
+.navbar-nav .nav-item:nth-child(2) a {
+    color: white;
+}
+
+.navbar-nav .nav-item:nth-child(2) a:hover {
+    color: #e0e0e0;
+}
+
+.navbar-user-btn {
+    color: white;
+    font-weight: bold;
+    background-color: #e52d8f;
+}
+
+.navbar-user-btn:hover {
+    background-color: #c9247d;
+    color: white;
+}
+
+.navbar-user-btn img {
+    width: 25px;
+    margin-left: 8px;
+}
+
+
 .footer {
     background-color: #f5f5f5;
     font-size: .9em;
