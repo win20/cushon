@@ -19,6 +19,8 @@ $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, 
 $this->registerMetaTag(['name' => 'description', 'content' => $this->params['meta_description'] ?? '']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_keywords'] ?? '']);
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);
+
+$homeUrl = '/index.php';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -41,20 +43,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Products', 'url' => ['/site/contact']],
-            ['label' => 'Solutions', 'url' => ['/site/contact']],
-            ['label' => 'Tools & more', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest
-                ? ['label' => 'Login', 'url' => ['/site/login']]
-                : '<li class="nav-item">'
-                    . Html::beginForm(['/site/logout'])
-                    . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
-                        ['class' => 'nav-link btn btn-link logout']
-                    )
-                    . Html::endForm()
-                    . '</li>'
+            ['label' => 'About', 'url' => ['#']],
+            [
+                'label' => 'Products',
+                'items' => [
+                    ['label' => 'Equitty Fund', 'url' => '#'],
+                    ['label' => 'Equitty Fund 2', 'url' => '#'],
+                ],
+            ],
+            ['label' => 'Solutions', 'url' => ['#']],
+            ['label' => 'Tools & more', 'url' => ['#']],
         ]
     ]);
 

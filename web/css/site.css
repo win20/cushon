@@ -22,10 +22,12 @@ main > .container {
 
 .navbar-nav .nav-item a {
     color: #525252;
+    pointer-events: none;
 }
 
 .navbar-nav .nav-item:nth-child(2) a {
     color: white;
+    pointer-events: all;
 }
 
 .navbar-nav .nav-item:nth-child(2) a:hover {
