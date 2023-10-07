@@ -15,17 +15,14 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class FontAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/_globals.css',
+        '//fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap',
     ];
-    public $js = [
-    ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset'
+    public $cssOptions = [
+        'type' => 'text/css',
     ];
 }

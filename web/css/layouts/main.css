@@ -1,13 +1,12 @@
-@import '../_variables.css';
-
 main > .container {
     padding: 70px 15px 20px;
 }
 
 nav div .navbar-brand {
-    font-family:'Trebuchet MS', sans-serif;
+    font-family:'Nunito', sans-serif;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 30px;
+    color: var(--cushon-pink);
 }
 
 .navbar-collapse {
