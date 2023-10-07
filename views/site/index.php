@@ -9,19 +9,19 @@ $menuButtons = [
     [
         'label' => 'View Investments',
         'url' => '#',
-        'icon' => '',
+        'icon' => 'images/user_outline.svg',
         'alt' => '',
     ],
     [
         'label' => 'Deposit Funds',
         'url' => 'test',
-        'icon' => '',
+        'icon' => 'images/piggy_bank.svg',
         'alt' => '',
     ],
     [
         'label' => 'Set up new ISA Pot',
         'url' => '#',
-        'icon' => '',
+        'icon' => 'images/plus.svg',
         'alt' => '',
     ],
 ];

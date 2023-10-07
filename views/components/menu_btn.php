@@ -15,6 +15,6 @@ $this->registerCssFile('css/components/menu_btn.css');
 <a href="<?= $url ?>" class='menu-btn'>
     <span>
         <img src="<?= $icon ?>" alt="<?= $alt ?>">
+        <?= $label ?>
     </span>
-    <?= $label ?>
 </a>
