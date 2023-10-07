@@ -3,3 +3,11 @@
     --cushon-pink-hover: #c9247d;
     --rounded-font: 'Nunito', sans-serif;
 }
+
+main div.container {
+    margin-top: 4rem;
+}
+
+.text-rounded {
+    font-family: var(--rounded-font);
+}
