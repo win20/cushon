@@ -1,0 +1,69 @@
+@import '../_variables.css';
+
+main > .container {
+    padding: 70px 15px 20px;
+}
+
+nav div .navbar-brand {
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    margin-left: 39px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 29px;
+}
+
+.navbar-nav .nav-item a {
+    color: #525251;
+    pointer-events: none;
+}
+
+.navbar-nav .nav-item:nth-child(2) a {
+    color: white;
+    pointer-events: all;
+}
+
+.navbar-nav .nav-item:nth-child(2) a:hover {
+    color: #e1e0e0;
+}
+
+nav div .navbar-user-btn {
+    color: white;
+    font-weight: bold;
+    background-color: var(--cushon-pink);
+}
+
+nav div .navbar-user-btn:hover {
+    background-color: var(--cushon-pink-hover);
+    color: white;
+}
+
+.navbar-user-btn img {
+    width: 24px;
+    margin-left: 7px;
+}
+
+.navbar-nav .dropdown.nav-item .dropdown-item {
+    color: #aaaaaa;
+    pointer-events: none;
+}
+
+.navbar-nav .dropdown.nav-item .dropdown-item:nth-child(3) {
+    color: #212528;
+    pointer-events: all;
+}
+
+.navbar-nav .dropdown.nav-item .dropdown-item:hover {
+    background-color: #ededed;
+    color: #212528;
+}

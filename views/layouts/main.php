@@ -19,8 +19,7 @@ $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, 
 $this->registerMetaTag(['name' => 'description', 'content' => $this->params['meta_description'] ?? '']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_keywords'] ?? '']);
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);
-
-$homeUrl = '/index.php';
+$this->registerCssFile('css/layouts/main.css');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -47,8 +46,9 @@ $homeUrl = '/index.php';
             [
                 'label' => 'Products',
                 'items' => [
-                    ['label' => 'Equitty Fund', 'url' => '#'],
-                    ['label' => 'Equitty Fund 2', 'url' => '#'],
+                    ['label' => 'Placeholder 1', 'url' => '#'],
+                    ['label' => 'Placeholder 2', 'url' => '#'],
+                    ['label' => 'Equities Fund', 'url' => '#'],
                 ],
             ],
             ['label' => 'Solutions', 'url' => ['#']],
