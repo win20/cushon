@@ -1,0 +1,15 @@
+main {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+main h1 {
+    font-weight: bold;
+    font-family: var(--rounded-font);
+}
+
+.menu-btn-container {
+    background-color: white;
+    border: none;
+    margin-top: 4rem;
+}

@@ -1,0 +1,16 @@
+a.menu-btn {
+    text-decoration: none;
+    margin: 0 30px;
+    background-color: whitesmoke;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    color: black;
+}
+
+a.menu-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+
