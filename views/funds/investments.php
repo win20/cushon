@@ -7,7 +7,6 @@
 
 use yii\helpers\Url;
 
-$this->registerCssFile('/css/pages/investments')
 ?>
 
 <div class="investments-container">

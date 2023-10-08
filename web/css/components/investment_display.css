@@ -9,4 +9,9 @@
 .fund-name {
     font-size: large;
     font-weight: 500;
+    margin-right: 2px;
+}
+
+.fund-name::after {
+    content: ' -';
 }

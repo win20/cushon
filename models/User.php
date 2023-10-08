@@ -46,7 +46,7 @@ class User extends Model
         $queryBuilder = new Query();
 
         $rows = $queryBuilder
-            ->select(['f.name AS fund_name', 'i.amount'])
+            ->select(['f.name AS fund_name', 'i.amount', 'i.date_added'])
             ->from('fund f')
             ->innerJoin('investment i', 'f.id = i.fk_fund')
             ->where(['in', 'i.fk_user', $userId])
