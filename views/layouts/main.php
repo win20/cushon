@@ -11,6 +11,7 @@ use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 use yii\bootstrap5\Button;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 FontAsset::register($this);
@@ -26,6 +27,7 @@ $this->registerCssFile('/css/layouts/main.css');
 
 $session = Yii::$app->session;
 $currentUser = $session->get('currentUserDetails');
+$underContructionUrl = Url::to('site/under-construction');
 
 $userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
 ?>
@@ -64,11 +66,7 @@ $userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
         ]
     ]);
 
-    echo Button::widget([
-        'options' => ['class' => 'navbar-user-btn'],
-        'encodeLabel' => false,
-        'label' => $userFullName . "<image src=" . Yii::getAlias('@web/images/user.png') . " alt='User icon'>",
-    ]);
+    echo Html::a($userFullName, ['/site/under-construction'], ['class'=>'btn navbar-user-btn']);
 
     NavBar::end();
 

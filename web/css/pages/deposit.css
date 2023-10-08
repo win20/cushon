@@ -6,3 +6,13 @@
 .deposit-funds-container .form-group {
     margin-bottom: 1.5rem;
 }
+
+.error-msg-group {
+    color: rgb(161, 15, 15);
+}
+
+.success-msg {
+    margin-top: 1.2rem;
+    font-size: 16px;
+    color: rgb(6, 107, 73);
+}

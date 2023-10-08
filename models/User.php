@@ -50,6 +50,7 @@ class User extends Model
             ->from('fund f')
             ->innerJoin('investment i', 'f.id = i.fk_fund')
             ->where(['in', 'i.fk_user', $userId])
+            ->orderBy('i.date_added DESC')
             ->all();
 
         return $rows;

@@ -40,7 +40,7 @@ $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
 
         <div class="form-group">
             <label for="exampleInputEmail1">Amount to deposit (GBP)</label>
-            <input type="number" name='amount' class="form-control form-control-lg" id="amount-to-deposit" placeholder="1000">
+            <input type="number" min='1' step='any' name='amount' class="form-control form-control-lg" id="amount-to-deposit" placeholder="1000">
             <?php if (isset($amountErrors)): ?>
                 <div class="error-msg-group">
                     <?php foreach ($amountErrors as $error): ?>
