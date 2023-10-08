@@ -15,7 +15,7 @@ class FundsController extends Controller
     public function actionIndex()
     {
         $userModel = new User();
-        $funds = $userModel->getFundsForUser(1);
+        $funds = $userModel->getEnabledFundsForUser(1);
 
         return $this->render('index', ['funds' => $funds]);
     }

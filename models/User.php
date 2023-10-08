@@ -24,7 +24,7 @@ class User extends ActiveRecord
         return $rows;
     }
 
-    public function getFundsForUser(int $userId): array
+    public function getEnabledFundsForUser(int $userId): array
     {
         $queryBuilder = new Query();
 
@@ -34,6 +34,7 @@ class User extends ActiveRecord
             ->innerJoin('user_fund uf', 'u.id = uf.fk_user')
             ->innerJoin('fund f', 'f.id = uf.fk_fund')
             ->where(['in', 'u.id', $userId])
+            ->where(['f.is_enabled' => 1])
             ->all();
 
         return $rows;
