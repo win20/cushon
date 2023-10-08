@@ -11,8 +11,8 @@ $this->registerCssFile('/css/pages/home.css');
 $this->title = 'Cushon - Home';
 
 $underContructionUrl = Url::to(['site/under-construction']);
+$showInvestmentsUrl = Url::to(['funds/show-investments']);
 $depositFundsUrl = Url::to(['funds/index']);
-$url = Url::to(['site/test']);
 
 $session = Yii::$app->session;
 $currentUser = $session->get('currentUserDetails');
@@ -20,7 +20,7 @@ $currentUser = $session->get('currentUserDetails');
 $menuButtons = [
     [
         'label' => 'View Investments',
-        'url' => $url,
+        'url' => $showInvestmentsUrl,
         'icon' => 'images/user_outline.svg',
         'alt' => 'user outline',
     ],

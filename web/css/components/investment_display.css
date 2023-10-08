@@ -1,0 +1,12 @@
+.investment-item {
+    margin-bottom: .5rem;
+    border: 1px solid lightgray;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+
+.fund-name {
+    font-size: large;
+    font-weight: 500;
+}

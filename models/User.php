@@ -40,4 +40,18 @@ class User extends Model
 
         return $rows;
     }
+
+    public function getInvestmentsForUser(int $userId)
+    {
+        $queryBuilder = new Query();
+
+        $rows = $queryBuilder
+            ->select(['f.name AS fund_name', 'i.amount'])
+            ->from('fund f')
+            ->innerJoin('investment i', 'f.id = i.fk_fund')
+            ->where(['in', 'i.fk_user', $userId])
+            ->all();
+
+        return $rows;
+    }
 }

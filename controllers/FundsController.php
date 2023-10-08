@@ -21,16 +21,6 @@ class FundsController extends Controller
         return $this->render('index', ['funds' => $funds]);
     }
 
-    public function actionCreateFund()
-    {
-
-    }
-
-    public function actionWithdrawFromFund()
-    {
-
-    }
-
     public function actionDeposit()
     {
 
@@ -51,5 +41,13 @@ class FundsController extends Controller
         $result['fund'] = $fundDetails['name'];
 
         return $this->render('index', ['funds' => $funds, 'success' => $result]);
+    }
+
+    public function actionShowInvestments()
+    {
+        $userModel = new User();
+        $investments = $userModel->getInvestmentsForUser(1);
+
+        return $this->render('investments', ['investments' => $investments]);
     }
 }

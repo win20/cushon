@@ -145,10 +145,8 @@ class SiteController extends Controller
         return $this->render('under_construction');
     }
 
-    public function actionTest()
+    public function actionInvestmentsPage()
     {
-        $userModel = new User();
-        $rows = $userModel->getCurrentUserDetails();
-        var_dump($rows);
+
     }
 }
