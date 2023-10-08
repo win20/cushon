@@ -22,6 +22,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $this->params['met
 $this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_keywords'] ?? '']);
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);
 $this->registerCssFile('css/layouts/main.css');
+
+
+$session = Yii::$app->session;
+$currentUser = $session->get('currentUserDetails');
+
+$userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -61,7 +67,7 @@ $this->registerCssFile('css/layouts/main.css');
     echo Button::widget([
         'options' => ['class' => 'navbar-user-btn'],
         'encodeLabel' => false,
-        'label' => "Win Barua" . "<image src=" . Yii::getAlias('@web/images/user.png') . " alt='User icon'>",
+        'label' => $userFullName . "<image src=" . Yii::getAlias('@web/images/user.png') . " alt='User icon'>",
     ]);
 
     NavBar::end();

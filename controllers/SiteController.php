@@ -9,9 +9,22 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\User;
+use yii\db\Query;
 
 class SiteController extends Controller
 {
+    public function __construct($id, $module, $config = [])
+    {
+        parent::__construct($id, $module, $config);
+
+        $userModel = new User();
+        $currentUserDetails = $userModel->getCurrentUserDetails();
+
+        $session = Yii::$app->session;
+        $session->set('currentUserDetails', $currentUserDetails);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -129,5 +142,12 @@ class SiteController extends Controller
     public function actionUnderConstruction()
     {
         return $this->render('under_construction');
+    }
+
+    public function actionTest()
+    {
+        $userModel = new User();
+        $rows = $userModel->getCurrentUserDetails();
+        var_dump($rows);
     }
 }

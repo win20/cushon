@@ -8,13 +8,16 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\User;
 
-class FundController extends Controller
+class FundsController extends Controller
 {
     public function actionIndex()
     {
+        $userModel = new User();
+        $funds = $userModel->getFundsForUser(1);
 
+        return $this->render('index', ['funds' => $funds]);
     }
 
     public function actionCreateFund()
