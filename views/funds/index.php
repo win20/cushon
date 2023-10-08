@@ -15,6 +15,9 @@ $postUrl = Url::to(['funds/deposit']);
 
 $fundErrors = isset($validation['fundId']) ? $validation['fundId'] : [];
 $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
+
+$fundId = $_POST['fundId'] ?? '';
+$amount = $_POST['amount'] ?? '';
 ?>
 
 <div class="deposit-funds-container">
@@ -26,7 +29,7 @@ $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
             <select name='fundId' class="form-select form-select-lg" aria-label=".form-select-lg example">
                 <option selected>Select a fund</option>
                 <?php foreach ($funds as $fund): ?>
-                    <option value="<?= $fund['fund_id'] ?>"><?= $fund['fund_name'] ?></option>
+                    <option value="<?= $fund['fund_id'] ?>" <?= $fundId == $fund['fund_id'] ? 'selected' : '' ?> ><?= $fund['fund_name'] ?></option>
                 <?php endforeach; ?>
             </select>
             <?php if (isset($fundErrors)): ?>
@@ -40,7 +43,7 @@ $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
 
         <div class="form-group">
             <label for="exampleInputEmail1">Amount to deposit (GBP)</label>
-            <input type="number" min='1' step='any' name='amount' class="form-control form-control-lg" id="amount-to-deposit" placeholder="1000">
+            <input type="number" min='1' step='any' name='amount' value='<?= $amount ?>' class="form-control form-control-lg" id="amount-to-deposit" placeholder="1000">
             <?php if (isset($amountErrors)): ?>
                 <div class="error-msg-group">
                     <?php foreach ($amountErrors as $error): ?>
