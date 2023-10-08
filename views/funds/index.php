@@ -9,7 +9,7 @@
 use yii\bootstrap5\Dropdown;
 
 
-$this->registerCssFile('css/pages/deposit.css');
+$this->registerCssFile('/css/pages/deposit.css');
 $this->title = 'Cushon - Deposit Funds';
 ?>
 

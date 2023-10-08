@@ -2,7 +2,7 @@
 
 /** @var yii\web\View $this */
 
-$this->registerCssFile('css/pages/under_construction.css');
+$this->registerCssFile('/css/pages/under_construction.css');
 ?>
 
 <div class='under-construction-container'>

@@ -9,7 +9,7 @@
  * @var string $label
  */
 
-$this->registerCssFile('css/components/menu_btn.css');
+$this->registerCssFile('/css/components/menu_btn.css');
 ?>
 
 <a href="<?= $url ?>" class='menu-btn'>

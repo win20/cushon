@@ -7,7 +7,7 @@
 
 use yii\helpers\Url;
 
-$this->registerCssFile('css/pages/home.css');
+$this->registerCssFile('/css/pages/home.css');
 $this->title = 'Cushon - Home';
 
 $underContructionUrl = Url::to(['site/under-construction']);
