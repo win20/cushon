@@ -7,8 +7,8 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
 use app\models\User;
+use app\models\Investment;
 
 class FundsController extends Controller
 {
@@ -30,8 +30,18 @@ class FundsController extends Controller
 
     }
 
-    public function actionDepositIntoFund()
+    public function actionDeposit()
     {
+        $investmentModel = new Investment();
 
+        $userModel = new User();
+        $funds = $userModel->getEnabledFundsForUser(1);
+        $currentUserId = $userModel->getCurrentUserDetails()['id'];
+
+        $result = $investmentModel->store($currentUserId);
+
+        if (!empty($result)) {
+            return $this->render('index', ['funds' => $funds, 'validation' => $result]);
+        }
     }
 }
