@@ -8,14 +8,15 @@ use yii\db\Query;
 
 class User extends ActiveRecord
 {
+    private const CURRENT_USER_ID = 1;  // would not need this in real application
+
     public function getCurrentUserDetails()
     {
-        $userId = Yii::$app->session->get('loggedInUserId');
+        $userId = Yii::$app->session->get('currentUserDetails')['id'] ?? self::CURRENT_USER_ID;
 
         $queryBuilder = new Query();
 
         $rows = $queryBuilder
-            ->select(['id', 'fname', 'lname'])
             ->from('user')
             ->where(['in', 'id', $userId])
             ->one();

@@ -18,6 +18,7 @@ class SiteController extends Controller
     {
         parent::__construct($id, $module, $config);
 
+        // Pretend a user has logged in, store data in session
         $userModel = new User();
         $currentUserDetails = $userModel->getCurrentUserDetails();
 
