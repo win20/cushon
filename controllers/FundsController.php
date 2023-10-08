@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\User;
 use app\models\Investment;
+use app\models\Fund;
 
 class FundsController extends Controller
 {
@@ -32,6 +33,7 @@ class FundsController extends Controller
 
     public function actionDeposit()
     {
+
         $investmentModel = new Investment();
 
         $userModel = new User();
@@ -40,8 +42,14 @@ class FundsController extends Controller
 
         $result = $investmentModel->store($currentUserId);
 
-        if (!empty($result)) {
+        if (!in_array('success', $result)) {
             return $this->render('index', ['funds' => $funds, 'validation' => $result]);
         }
+
+        $model = new Fund();
+        $fundDetails = $model->getFundById($result['fund']);
+        $result['fund'] = $fundDetails['name'];
+
+        return $this->render('index', ['funds' => $funds, 'success' => $result]);
     }
 }

@@ -29,23 +29,33 @@ $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
                     <option value="<?= $fund['fund_id'] ?>"><?= $fund['fund_name'] ?></option>
                 <?php endforeach; ?>
             </select>
-            <div class='error-msg-group'>
-                <?php foreach ($fundErrors as $error): ?>
-                    <div><?= $error ?></div>
-                <?php endforeach; ?>
-            </div>
+            <?php if (isset($fundErrors)): ?>
+                <div class='error-msg-group'>
+                    <?php foreach ($fundErrors as $error): ?>
+                        <div><?= $error ?></div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Amount to deposit (GBP)</label>
             <input type="number" name='amount' class="form-control form-control-lg" id="amount-to-deposit" placeholder="1000">
-            <div class="error-msg-group">
-                <?php foreach ($amountErrors as $error): ?>
-                    <div><?= $error ?></div>
-                <?php endforeach; ?>
-            </div>
+            <?php if (isset($amountErrors)): ?>
+                <div class="error-msg-group">
+                    <?php foreach ($amountErrors as $error): ?>
+                        <div><?= $error ?></div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
 
         <button type="submit" class="btn btn-primary">Deposit</button>
     </form>
+
+    <?php if (isset($success) && $success): ?>
+        <div class='success-msg'>
+            You have successfully deposited £<?= $success['amount'] ?> into "<?= $success['fund'] ?>".
+        </div>
+    <?php endif; ?>
 </div>

@@ -28,6 +28,7 @@ class Investment extends Model
         }
         if (floatval($_POST['amount']) > 20000) {
             $errorMessages['amount'][] = 'Please enter an amount lower than 20,000';
+            $isError = true;
         }
 
         if ($isError) {
@@ -53,6 +54,10 @@ class Investment extends Model
             'amount' => $_POST['amount'],
         ])->execute();
 
-        return null;
+        return [
+            'success',
+            'fund' => $_POST['fundId'],
+            'amount' => $_POST['amount'],
+        ];
     }
 }

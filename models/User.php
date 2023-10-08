@@ -5,8 +5,9 @@ namespace app\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Query;
+use yii\base\Model;
 
-class User extends ActiveRecord
+class User extends Model
 {
     private const CURRENT_USER_ID = 1;  // would not need this in real application
 
