@@ -1,0 +1,32 @@
+.filter-container {
+    margin-bottom: .7rem;
+    margin-top: 2rem;
+}
+
+.filter-container span {
+    font-size: 1.1rem;
+    margin-right: .5rem;
+}
+
+.filter-btn {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 20px;
+    padding: 7px 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.clear-filter-btn {
+    margin-left: 1.2rem;
+    background-color: rgb(218, 160, 160);
+}
+
+.filter-btn:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.clear-filter-btn:hover {
+    margin-left: 1.2rem;
+    background-color: rgb(190, 136, 136);
+}

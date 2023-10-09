@@ -4,13 +4,27 @@
 
 /**
  * @param array<string,mixed> $currentUser
+ * @param array<array<string,mixed>> $fundsInvestedByUser
 */
 
 use yii\helpers\Url;
+
+$this->registerCssFile('/css/pages/investments.css');
 ?>
 
 <div class="investments-container">
     <h1>Your Investments</h1>
+
+    <?php if (count($fundsInvestedByUser) > 1 || !empty($fundsInvestedByUser)): ?>
+        <div class='filter-container'>
+            <span>Filter funds:</span>
+            <?php foreach ($fundsInvestedByUser as $fund): ?>
+                <a href='/funds/filter-investments?fundId=<?= $fund['id'] ?>' class='filter-btn' id='fund-<?= $fund['id'] ?>'><?= $fund['name'] ?></a>
+            <?php endforeach; ?>
+            <a href='/funds/show-investments' class='clear-filter-btn filter-btn' id='fund-<?= $fund['id'] ?>'>Clear filters</a>
+        </div>
+    <?php endif; ?>
+
     <?php if (!empty($investments)): ?>
         <?php foreach($investments as $investment): ?>
             <?= $this->render('../components/investment_display', ['investment' => $investment]) ?>

@@ -24,12 +24,11 @@ class FundsController extends Controller
     {
         $investmentModel = new Investment();
         $userModel = new User();
-        $session = Yii::$app->session;
 
         $funds = $session->get('userFunds');
-        $currentUserId = $session->get('currentUserDetails')['id'];
+        $userId = $this->getCurrentUserId();
 
-        $result = $investmentModel->store($currentUserId);
+        $result = $investmentModel->store($userId);
 
         if (!in_array('success', $result)) {
             return $this->render('index', ['funds' => $funds, 'validation' => $result]);
@@ -45,8 +44,29 @@ class FundsController extends Controller
     public function actionShowInvestments()
     {
         $userModel = new User();
-        $investments = $userModel->getInvestmentsForUser(1);
+        $userId = $this->getCurrentUserId();
 
-        return $this->render('investments', ['investments' => $investments]);
+        $investments = $userModel->getInvestmentsForUser($userId);
+        $fundsInvestedByUser = $userModel->getFundsInvestedInByUser($userId);
+
+        return $this->render('investments', ['investments' => $investments, 'fundsInvestedByUser' => $fundsInvestedByUser]);
+    }
+
+    public function actionFilterInvestments()
+    {
+        $userId = $this->getCurrentUserId();
+        $fundId = $_GET['fundId'] ?? null;
+
+        $userModel = new User();
+        $investmentsByFund = $userModel->getInvestmentsForUserByFund($userId, $fundId);
+        $fundsInvestedByUser = $userModel->getFundsInvestedInByUser($userId);
+
+        return $this->render('investments', ['investments' => $investmentsByFund, 'fundsInvestedByUser' => $fundsInvestedByUser]);
+    }
+
+    private function getCurrentUserId(): int
+    {
+        $session = Yii::$app->session;
+        return $session->get('currentUserDetails')['id'];
     }
 }
