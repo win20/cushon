@@ -3,10 +3,7 @@
 namespace app\controllers;
 
 use Yii;
-use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\Response;
-use yii\filters\VerbFilter;
 use app\models\User;
 use app\models\Investment;
 use app\models\Fund;
@@ -25,12 +22,12 @@ class FundsController extends Controller
 
     public function actionDeposit()
     {
-
         $investmentModel = new Investment();
-
         $userModel = new User();
-        $funds = $userModel->getEnabledFundsForUser(1);
-        $currentUserId = $userModel->getCurrentUserDetails()['id'];
+        $session = Yii::$app->session;
+
+        $funds = $session->get('userFunds');
+        $currentUserId = $session->get('currentUserDetails')['id'];
 
         $result = $investmentModel->store($currentUserId);
 

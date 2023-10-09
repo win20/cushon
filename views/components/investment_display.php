@@ -1,8 +1,9 @@
 <?php
 
+/** @var yii\web\View $this */
+
 /**
- * @var yii\web\View $this
- * @var array<string,mixed> $investment
+ * @param array<string,string> $investment
 */
 
 use yii\helpers\Url;

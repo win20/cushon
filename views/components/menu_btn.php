@@ -3,10 +3,10 @@
 /** @var yii\web\View $this */
 
 /**
- * @var string $label
- * @var string $url
- * @var string $icon
- * @var string $label
+ * @param string $label
+ * @param string $url
+ * @param string $icon
+ * @param string $label
  */
 
 $this->registerCssFile('/css/components/menu_btn.css');

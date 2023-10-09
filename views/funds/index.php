@@ -3,7 +3,8 @@
 /** @var yii\web\View $this */
 
 /**
- * @var array<array<string,mixed>> $funds
+ * @param array<array<string,mixed>> $funds
+ * @param array<array<string,string>> $validation (optional)
  */
 
 use yii\bootstrap5\Dropdown;

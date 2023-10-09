@@ -1,12 +1,12 @@
 <?php
 
+/** @var yii\web\View $this */
+
 /**
- * @var yii\web\View $this
- * @var array<string,mixed> $currentUser
+ * @param array<string,mixed> $currentUser
 */
 
 use yii\helpers\Url;
-
 ?>
 
 <div class="investments-container">
