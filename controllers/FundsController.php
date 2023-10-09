@@ -16,7 +16,9 @@ class FundsController extends Controller
     public function actionIndex()
     {
         $userModel = new User();
-        $funds = $userModel->getEnabledFundsForUser(1);
+        $session = Yii::$app->session;
+
+        $funds = $session->get('userFunds');
 
         return $this->render('index', ['funds' => $funds]);
     }

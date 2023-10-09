@@ -3,7 +3,7 @@
 /** @var yii\web\View $this */
 
 /**
- * @var array<string,mixed> $funds
+ * @var array<array<string,mixed>> $funds
  */
 
 use yii\bootstrap5\Dropdown;
@@ -18,6 +18,8 @@ $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
 
 $fundId = $_POST['fundId'] ?? '';
 $amount = $_POST['amount'] ?? '';
+
+$selectedFund = $_GET['selectedFund'] ?? null;
 ?>
 
 <div class="deposit-funds-container">
@@ -29,7 +31,7 @@ $amount = $_POST['amount'] ?? '';
             <select name='fundId' class="form-select form-select-lg" aria-label=".form-select-lg example">
                 <option selected>Select a fund</option>
                 <?php foreach ($funds as $fund): ?>
-                    <option value="<?= $fund['fund_id'] ?>" <?= $fundId == $fund['fund_id'] ? 'selected' : '' ?> ><?= $fund['fund_name'] ?></option>
+                    <option value="<?= $fund['fund_id'] ?>" <?= $fund['fund_id'] == $fundId || $fund['fund_id'] == $selectedFund ? 'selected' : '' ?> ><?= $fund['fund_name'] ?></option>
                 <?php endforeach; ?>
             </select>
             <?php if (isset($fundErrors)): ?>

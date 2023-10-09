@@ -34,7 +34,10 @@ $userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
 $funds = $session->get('userFunds');
 $fundsLinks = [];
 foreach ($funds as $fund) {
-    $fundsLinks[] = ['label' => $fund['fund_name'], 'url' => 'funds/index?selectedFund=' . $fund['fund_id']];
+    $fundsLinks[] = [
+        'label' => $fund['fund_name'],
+        'url' => Url::to('/funds/index?selectedFund=' . $fund['fund_id']),
+    ];
 }
 
 ?>
