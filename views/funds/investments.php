@@ -15,7 +15,7 @@ $this->registerCssFile('/css/pages/investments.css');
 <div class="investments-container">
     <h1>Your Investments</h1>
 
-    <?php if (count($fundsInvestedByUser) > 1 || !empty($fundsInvestedByUser)): ?>
+    <?php if (count($fundsInvestedByUser) > 1): ?>
         <div class='filter-container'>
             <span>Filter funds:</span>
             <?php foreach ($fundsInvestedByUser as $fund): ?>
