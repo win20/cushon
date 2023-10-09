@@ -25,7 +25,7 @@ class User extends Model
         return $rows;
     }
 
-    public function getEnabledFundsForUser(int $userId): array
+    public function getEnabledFundsForUser(int $userId = 1): array
     {
         $queryBuilder = new Query();
 

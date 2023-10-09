@@ -20,10 +20,13 @@ class SiteController extends Controller
 
         // Pretend a user has logged in, store data in session
         $userModel = new User();
-        $currentUserDetails = $userModel->getCurrentUserDetails();
-
         $session = Yii::$app->session;
+
+        $currentUserDetails = $userModel->getCurrentUserDetails();
         $session->set('currentUserDetails', $currentUserDetails);
+
+        $funds = $userModel->getEnabledFundsForUser();
+        $session->set('userFunds', $funds);
     }
 
     /**
@@ -75,6 +78,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
         return $this->render('index');
     }
 

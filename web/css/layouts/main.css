@@ -53,13 +53,7 @@ nav div .navbar-user-btn:hover {
 }
 
 .navbar-nav .dropdown.nav-item .dropdown-item {
-    color: #aaaaaa;
-    pointer-events: none;
-}
-
-.navbar-nav .dropdown.nav-item .dropdown-item:nth-child(3) {
     color: #212528;
-    pointer-events: all;
 }
 
 .navbar-nav .dropdown.nav-item .dropdown-item:hover {

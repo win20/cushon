@@ -24,12 +24,19 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_k
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);
 $this->registerCssFile('/css/layouts/main.css');
 
-
 $session = Yii::$app->session;
 $currentUser = $session->get('currentUserDetails');
 $underContructionUrl = Url::to('site/under-construction');
+$equitiesFundUrl = Url::to('funds/index?selectedFund=equities');
 
 $userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
+
+$funds = $session->get('userFunds');
+$fundsLinks = [];
+foreach ($funds as $fund) {
+    $fundsLinks[] = ['label' => $fund['fund_name'], 'url' => 'funds/index?selectedFund=' . $fund['fund_id']];
+}
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -55,11 +62,7 @@ $userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
             ['label' => 'About', 'url' => ['#']],
             [
                 'label' => 'Products',
-                'items' => [
-                    ['label' => 'Placeholder 1', 'url' => '#'],
-                    ['label' => 'Placeholder 2', 'url' => '#'],
-                    ['label' => 'Equities Fund', 'url' => '#'],
-                ],
+                'items' => $fundsLinks,
             ],
             ['label' => 'Solutions', 'url' => ['#']],
             ['label' => 'Tools & more', 'url' => ['#']],
