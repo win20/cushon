@@ -34,7 +34,7 @@ $this->registerCssFile('/css/pages/investments.css');
 
        <?= $this->render('../components/menu_btn', [
             'label' => 'Make your first investment',
-            'url' => Url::to(['funds/index']),
+            'url' => Url::to(['/funds/index']),
             'icon' => '/images/piggy_bank.svg',
             'alt' => 'piggy bank outline'
         ]) ?>

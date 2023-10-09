@@ -25,6 +25,7 @@ class FundsController extends Controller
         $investmentModel = new Investment();
         $userModel = new User();
 
+        $session = Yii::$app->session;
         $funds = $session->get('userFunds');
         $userId = $this->getCurrentUserId();
 

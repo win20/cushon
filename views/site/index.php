@@ -10,9 +10,9 @@ use yii\helpers\Url;
 $this->registerCssFile('/css/pages/home.css');
 $this->title = 'Cushon - Home';
 
-$underContructionUrl = Url::to(['site/under-construction']);
-$showInvestmentsUrl = Url::to(['funds/show-investments']);
-$depositFundsUrl = Url::to(['funds/index']);
+$underContructionUrl = Url::to(['/site/under-construction']);
+$showInvestmentsUrl = Url::to(['/funds/show-investments']);
+$depositFundsUrl = Url::to(['/funds/index']);
 
 $session = Yii::$app->session;
 $currentUser = $session->get('currentUserDetails');

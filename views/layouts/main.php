@@ -24,8 +24,8 @@ $this->registerCssFile('/css/layouts/main.css');
 
 $session = Yii::$app->session;
 $currentUser = $session->get('currentUserDetails');
-$underContructionUrl = Url::to('site/under-construction');
-$equitiesFundUrl = Url::to('funds/index?selectedFund=equities');
+$underContructionUrl = Url::to('/site/under-construction');
+$equitiesFundUrl = Url::to('/funds/index?selectedFund=equities');
 
 $userFullName = $currentUser['fname'] . ' ' . $currentUser['lname'];
 

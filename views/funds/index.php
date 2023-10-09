@@ -12,7 +12,7 @@ use yii\helpers\Url;
 
 $this->registerCssFile('/css/pages/deposit.css');
 $this->title = 'Cushon - Deposit Funds';
-$postUrl = Url::to(['funds/deposit']);
+$postUrl = Url::to(['/funds/deposit']);
 
 $fundErrors = isset($validation['fundId']) ? $validation['fundId'] : [];
 $amountErrors = isset($validation['amount']) ? $validation['amount'] : [];
