@@ -23,6 +23,7 @@ CREATE TABLE investment (
 	fk_user INTEGER NOT NULL,
 	fk_fund INTEGER NOT NULL,
     amount DECIMAL(7,2) NOT NULL,
+    date_added DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY(fk_user) REFERENCES user(id),
     FOREIGN KEY(fk_fund) REFERENCES fund(id)
