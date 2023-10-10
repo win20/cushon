@@ -19,7 +19,7 @@ Cushon wants to offer retail customers the posibility to easily deposit money in
 ## Challenges
 - Lack of domain knowlegde.
 - Not being able to communicate to skateholder during project.
-- Deciding what features to implement and which to ommit.
+- Deciding what features to implement and which to ommit given time constraints.
 
 ## Possible enhancements
 - Responsiveness
