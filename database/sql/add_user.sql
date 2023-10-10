@@ -1,2 +1,2 @@
-INSERT INTO users (fname, lname)
+INSERT INTO user (fname, lname)
 VALUES ('Win', 'Barua');

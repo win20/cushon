@@ -14,17 +14,17 @@ CREATE TABLE user_fund (
 	fk_user INTEGER NOT NULL,
 	fk_fund INTEGER NOT NULL,
 
-    FOREIGN KEY(fk_user) REFERENCES users(id),
-    FOREIGN KEY(fk_fund) REFERENCES funds(id)
+    FOREIGN KEY(fk_user) REFERENCES user(id),
+    FOREIGN KEY(fk_fund) REFERENCES fund(id)
 );
 
 CREATE TABLE investment (
 	id INTEGER PRIMARY KEY AUTO_INCREMENT,
 	fk_user INTEGER NOT NULL,
 	fk_fund INTEGER NOT NULL,
-    amount DECIMAL NOT NULL,
+    amount DECIMAL(7,2) NOT NULL,
 
-    FOREIGN KEY(fk_user) REFERENCES users(id),
-    FOREIGN KEY(fk_fund) REFERENCES funds(id)
+    FOREIGN KEY(fk_user) REFERENCES user(id),
+    FOREIGN KEY(fk_fund) REFERENCES fund(id)
 );
 
